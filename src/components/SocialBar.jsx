@@ -14,7 +14,8 @@ const SocialBar = () => {
       <a href="https://instagram.com/yourprofile" target="_blank" rel="noreferrer">
         <FaInstagram />
       </a>
-      <a href="mailto:yourmail@gmail.com">
+      <a href="mailto:namanmevadait@gmail.com">
+
         <FaEnvelope />
       </a>
     </div>

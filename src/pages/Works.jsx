@@ -1,7 +1,8 @@
 import React from "react";
 import "./Works.css";
 import furneoImg from "../assets/projects/project1.jpg";
-import cloudyImg from "../assets/projects/image.png"; 
+import cloudyImg from "../assets/projects/project2.png"; 
+import portfolioImg from "../assets/projects/project3.png"; // Add your portfolio image
 import { FaLaptopCode } from "react-icons/fa";
 
 const Works = () => {
@@ -17,7 +18,13 @@ const Works = () => {
       title: "CloudyBuddy",
       detail: "Have a look at simple weather forecast website with live updates",
       img: cloudyImg,
-      link: "https://cloudybuddy.netlify.app/", // replace with your actual link
+      link: "https://cloudybuddy.netlify.app/",
+    },
+    {
+      title: "My Portfolio",
+      detail: "This is my personal portfolio showcasing my projects and skills",
+      img: portfolioImg,
+      link: "https://yourportfolio.netlify.app/", // replace with your live link
     },
   ];
 

@@ -21,6 +21,7 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* hanging shadow */
   transition: transform 0.3s, box-shadow 0.3s, color 0.3s;
   animation: float 3s ease-in-out infinite; /* floating animation */
+  border: 1px solid white;
 }
 
 .social-bar a:hover {

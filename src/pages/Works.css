@@ -1,9 +1,11 @@
 /* Import font */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+/* ============================
+   Works Section
+============================ */
 .works {
-  
-  padding: 60px 30px; /* smaller padding */
+  padding: 60px 30px;
   background: linear-gradient(135deg, #0e152b, #121c34);
   color: white;
   font-family: 'Montserrat', sans-serif;
@@ -18,7 +20,7 @@
 }
 
 .works h2 {
-  font-size: 2rem; /* smaller title */
+  font-size: 2rem;
   color: #4da6ff;
   margin: 0;
 }
@@ -29,7 +31,7 @@
   margin-right: 10px;
 }
 
-/* Works container */
+/* Works container: grid for all projects */
 .works-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -38,22 +40,49 @@
   align-items: start;
 }
 
-/* Project Card */
+/* Force 3 cards in a row on large screens */
+@media screen and (min-width: 1200px) {
+  .works-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+/* Medium screens: 2 cards per row */
+@media screen and (max-width: 1199px) and (min-width: 800px) {
+  .works-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small screens: 1 card per row */
+@media screen and (max-width: 799px) {
+  .works-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================
+   Project Card
+============================ */
 .project-card {
   background: rgba(255, 255, 255, 0.04);
   border-radius: 10px;
-  border-left: 3px solid #4da6ff; /* thinner border */
+  border-left: 3px solid #4da6ff;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   width: 100%;
-  max-width: 400px; /* smaller card */
+  max-width: 400px;
   overflow: hidden;
 }
 
 .project-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* lighter shadow */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* ============================
+   Image Wrapper & Overlay
+============================ */
 .work-img-wrapper {
   position: relative;
   width: 100%;
@@ -63,15 +92,16 @@
 .work-img {
   width: 100%;
   display: block;
-  height: auto;
+  height: 200px; /* consistent height for all cards */
+  object-fit: cover;
   transition: transform 0.2s ease;
 }
 
 .project-card:hover .work-img {
-  transform: scale(1.02); /* smaller zoom */
+  transform: scale(1.02);
 }
 
-/* Overlay */
+/* Overlay on hover */
 .overlay {
   position: absolute;
   top: 0;
@@ -86,7 +116,7 @@
   transition: opacity 0.2s ease;
   color: #ff4d5a;
   font-weight: 500;
-  font-size: 0.9rem; /* smaller font */
+  font-size: 0.9rem;
   text-transform: uppercase;
 }
 
@@ -94,19 +124,21 @@
   opacity: 1;
 }
 
-/* Content */
+/* ============================
+   Content Area
+============================ */
 .work-content {
   padding: 12px 15px;
   text-align: center;
 }
 
 .work-content h3 {
-  font-size: 1.3rem; /* smaller heading */
+  font-size: 1.3rem;
   margin-bottom: 6px;
   color: #e0e0e0;
 }
 
-/* Details */
+/* Project details */
 .project-detail-container {
   display: flex;
   align-items: center;
@@ -116,7 +148,7 @@
 }
 
 .project-detail-container p {
-  font-size: 0.9rem; /* smaller detail text */
+  font-size: 0.9rem;
   color: #bbbbbb;
   margin: 0;
   line-height: 1.3;
