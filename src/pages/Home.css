@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* ✅ center horizontally */
+  flex-direction: column;    /* ✅ stack vertically */
+  text-align: center;        /* ✅ center text */
+  min-height: 100vh;
+  padding: 50px 20px;
+  color: white;
+  font-family: 'Montserrat', sans-serif; /* Apply Montserrat */
+}
+
+.home-content {
+  max-width: 800px;
+}
+
+.home-content h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  line-height: 1.3;
+}
+
+.home-content h1 .highlight {
+  color: #4da6ff; /* highlight name */
+}
+
+.home-content h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: rgb(255, 77, 90);
+  min-height: 45px;  /* reserve space for typewriter */
+  font-weight: 600;
+}
+
+.home-content p {
+  margin-bottom: 30px;
+  line-height: 1.7;
+  font-size: 1.2rem;
+  color: #d1d1d1;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;   /* ✅ center buttons */
+  gap: 18px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background-color: #1e90ff;
+  color: white;
+}
+
+.btn.primary:hover {
+  background-color: #4da6ff;
+}
+
+.btn.secondary {
+  border: 2px solid #1e90ff;
+  color: #1e90ff;
+}
+
+.btn.secondary:hover {
+  background-color: #1e90ff;
+  color: white;
+}

@@ -1,0 +1,73 @@
+/* Import Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.experience {
+  min-height: 100vh;
+  padding: 80px 50px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #0e152b, #121c34);
+}
+
+.experience h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #4da6ff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.exp-icon {
+  color: #e8e7e4;
+  font-size: 2rem;
+}
+
+.exp-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 12px;
+  border-left: 4px solid #4da6ff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 900px;
+}
+
+.exp-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.exp-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 5px;
+}
+
+.exp-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #aaa;
+}
+
+.exp-card .duration {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #fff3b0;
+}
+
+.exp-card ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.exp-card li {
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #d1d1d1;
+}
+
+.highlight {
+  color: #ff4d5a;
+  font-weight: 600;
+}

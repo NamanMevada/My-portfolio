@@ -1,0 +1,40 @@
+.social-bar {
+  position: fixed;
+  top: 40%;
+  left: 20px; /* thoda screen se andar taaki chipka na lage */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 1000;
+}
+
+.social-bar a {
+  color: white;
+  font-size: 1.5rem;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7); /* circle background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* hanging shadow */
+  transition: transform 0.3s, box-shadow 0.3s, color 0.3s;
+  animation: float 3s ease-in-out infinite; /* floating animation */
+}
+
+.social-bar a:hover {
+  transform: translateY(-10px) scale(1.1); /* jump */
+  color: #64ffda;
+
+}
+
+/* floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}

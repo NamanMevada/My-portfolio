@@ -1,0 +1,212 @@
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* General About Section */
+.about {
+  
+  min-height: auto;     /* ✅ remove forced full height */
+  padding: 40px 50px;   /* ✅ reduce top/bottom padding */
+
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #0e152b, #121c34);
+}
+
+/* Container for content + animation */
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+}
+
+/* Side by side layout on larger screens */
+@media screen and (min-width: 900px) {
+  .about-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+  }
+
+  .about-content {
+    max-width: 50%;
+  }
+
+  .about-animation {
+    max-width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* Headings */
+.about-content h2,
+.education h2,
+.skills h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #4da6ff;
+}
+
+/* About text */
+.about-content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #d1d1d1;
+  margin-bottom: 30px;
+}
+
+.highlight {
+  color: rgb(255, 77, 90);
+  font-weight: 600;
+}
+
+/* Education Section */
+.education {
+  max-width: 800px;
+  margin-bottom: 40px;
+}
+
+.edu-card {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px 30px;
+  border-radius: 12px;
+  border-left: 4px solid #4da6ff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.edu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.edu-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.edu-card h4 {
+  font-size: 1.15rem;
+  margin-bottom: 5px;
+  color: #aaa;
+}
+
+.edu-card .duration {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #fff3b0;
+}
+
+.edu-card p {
+  font-size: 1.15rem;
+  color: #d1d1d1;
+}
+
+.grad-icon {
+  color: #e8e7e4;
+  margin-right: 8px;
+  vertical-align: middle;
+  font-size: 2rem;
+}
+
+/* Skills Section */
+.skills {
+  margin-top: 30px;
+}
+
+.skills h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ff4d5a;
+}
+
+.skills-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  align-items: center;
+}
+
+.skill-logo {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  transition: transform 0.3s, filter 0.3s;
+  cursor: pointer;
+}
+
+.skill-logo:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0px 4px 8px rgba(77, 166, 255, 0.6));
+}
+
+/* Responsive smaller icons */
+@media screen and (max-width: 600px) {
+  .skill-logo {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Scroll-triggered animations */
+.about-content,
+.about-animation {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.about-content.slide-in-left {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.about-animation.slide-in-right {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ============================= */
+/*   IMAGE BOX (Replaces Lottie) */
+/* ============================= */
+.image-box {
+  border: 3px solid #4da6ff;
+  border-radius: 12px;
+  padding: 10px;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.4);
+  animation: float 3s ease-in-out infinite;
+}
+
+.about-image {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  object-position: 50% 20%; /* X% Y% → adjust to move crop */
+  border-radius: 10px;
+}
+
+
+/* Floating / Hanging in air effect */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+@media screen and (min-width: 900px) {
+  .about-animation {
+    display: flex;
+    justify-content: center;   /* center horizontally */
+    align-items: center;       /* center vertically */
+    height: 100vh;             /* take full screen height to center */
+    padding-right: 60px;       /* ✅ add space from right edge */
+  }
+}

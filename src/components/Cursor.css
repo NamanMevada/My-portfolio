@@ -1,0 +1,36 @@
+/* Hide default cursor */
+body {
+  cursor: none;
+}
+
+/* Small red dot */
+.cursor-dot {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background-color: crimson;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  transition: transform 0.1s ease, background-color 0.2s ease;
+}
+
+.cursor-dot.click {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+/* Outer border that trails */
+.cursor-border {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9998;
+  transition: all 0.2s ease-out;
+}
+
+
