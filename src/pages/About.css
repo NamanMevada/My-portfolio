@@ -3,12 +3,11 @@
 
 /* General About Section */
 .about {
-  min-height: auto;     /* ✅ remove forced full height */
-  padding: 40px 50px;   /* ✅ reduce top/bottom padding */
-
+  min-height: auto;
+  padding: 40px 20px; /* reduce side padding for mobile */
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 40px; /* slightly smaller gap for mobile */
   color: white;
   font-family: 'Montserrat', sans-serif;
   background: linear-gradient(135deg, #0e152b, #121c34);
@@ -18,7 +17,7 @@
 .about-container {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 40px;
   align-items: center;
 }
 
@@ -54,10 +53,10 @@
 
 /* About text */
 .about-content p {
-  font-size: 1.2rem;
-  line-height: 1.8;
+  font-size: 1.15rem;
+  line-height: 1.6;
   color: #d1d1d1;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .highlight {
@@ -68,56 +67,59 @@
 /* Education Section */
 .education {
   max-width: 800px;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
+  width: 100%;
 }
 
 .edu-card {
   background: rgba(255, 255, 255, 0.05);
-  padding: 25px 30px;
+  padding: 20px 25px;
   border-radius: 12px;
   border-left: 4px solid #4da6ff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .edu-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .edu-card h3 {
-  font-size: 1.6rem;
-  margin-bottom: 8px;
+  font-size: 1.4rem;
+  margin-bottom: 6px;
 }
 
 .edu-card h4 {
-  font-size: 1.15rem;
-  margin-bottom: 5px;
+  font-size: 1.05rem;
+  margin-bottom: 4px;
   color: #aaa;
 }
 
 .edu-card .duration {
   display: block;
-  margin-bottom: 12px;
-  font-size: 1rem;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
   color: #fff3b0;
 }
 
 .edu-card p {
-  font-size: 1.15rem;
+  font-size: 1rem;
   color: #d1d1d1;
 }
 
+/* Grad icon */
 .grad-icon {
   color: #e8e7e4;
-  margin-right: 8px;
+  margin-right: 6px;
   vertical-align: middle;
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 /* Skills Section */
 .skills {
-  margin-top: 30px;
+  margin-top: 25px;
+  width: 100%;
 }
 
 .skills h2 {
@@ -129,13 +131,14 @@
 .skills-icons {
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 20px;
+  justify-content: center; /* center on mobile */
   align-items: center;
 }
 
 .skill-logo {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
   transition: transform 0.3s, filter 0.3s;
   cursor: pointer;
@@ -144,14 +147,6 @@
 .skill-logo:hover {
   transform: scale(1.1);
   filter: drop-shadow(0px 4px 8px rgba(77, 166, 255, 0.6));
-}
-
-/* Responsive smaller icons */
-@media screen and (max-width: 600px) {
-  .skill-logo {
-    width: 50px;
-    height: 50px;
-  }
 }
 
 /* Scroll-triggered animations */
@@ -177,34 +172,78 @@
 /* ============================= */
 .about-animation {
   display: flex;
-  justify-content: center;   /* center horizontally */
-  align-items: center;       /* center vertically */
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  max-width: 400px;          /* adjust size */
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .animation-box {
   width: 100%;
-  max-width: 350px;          /* size of Lottie */
+  max-width: 350px;
 }
 
-/* Responsive adjustments */
+/* ================= Responsive adjustments ================= */
+@media screen and (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .about-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .about-animation {
+    max-width: 300px;
+  }
+}
+
 @media screen and (max-width: 600px) {
-  .animation-box {
-    max-width: 250px;
+  .about {
+    padding: 30px 15px;
+    gap: 30px;
+  }
+
+  .about-content h2,
+  .education h2,
+  .skills h2 {
+    font-size: 1.6rem;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .edu-card {
+    padding: 15px 20px;
+  }
+
+  .edu-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .edu-card h4 {
+    font-size: 1rem;
+  }
+
+  .edu-card .duration {
+    font-size: 0.85rem;
   }
 
   .skills-icons {
-    gap: 15px;
+    gap: 12px;
   }
-}
 
-@media screen and (min-width: 900px) {
-  .about-animation {
-    display: flex;
-    justify-content: center;   /* center horizontally */
-    align-items: center;       /* center vertically */
-    height: 100vh;             /* take full screen height to center */
-    padding-right: 60px;       /* ✅ add space from right edge */
+  .skill-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .animation-box {
+    max-width: 250px;
   }
 }
