@@ -55,7 +55,7 @@ const Navbar = () => {
         ))}
         <li>
           <a
-            href="/resume.pdf"
+            href="https://drive.google.com/drive/u/0/folders/1s_azBj2C-pZBpCVxEMNcV9xt729Y_kJC"
             className="resume-btn"
             target="_blank"
             rel="noopener noreferrer"
@@ -63,6 +63,7 @@ const Navbar = () => {
           >
             Resume
           </a>
+
         </li>
       </ul>
     </nav>
