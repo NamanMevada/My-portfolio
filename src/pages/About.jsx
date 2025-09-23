@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "./About.css";
 import { FaGraduationCap } from "react-icons/fa";
+import { Player } from "lottie-react";
 
 // Import PNG logos
 import htmlLogo from "../assets/skills/html.png";
@@ -11,8 +12,8 @@ import reactLogo from "../assets/skills/react.png";
 import figmaLogo from "../assets/skills/figma.png";
 import gitLogo from "../assets/skills/git.png";
 
-// Import your image
-import myImage from "../assets/Gemini_Generated_Image_21bzqa21bzqa21bz.png";
+// Import Lottie JSON animation
+import developerSkillsAnimation from "../assets/developer skills.json";
 
 const About = () => {
   const contentRef = useRef(null);
@@ -62,7 +63,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* Skills Section */}
           <div className="skills">
             <h2>My Skills</h2>
             <div className="skills-icons">
@@ -77,10 +77,14 @@ const About = () => {
           </div>
         </div>
 
-        {/* Replace Lottie with Image */}
         <div className="about-animation" ref={animationRef}>
-          <div className="image-box">
-            <img src={myImage} alt="Naman" className="about-image" />
+          <div className="animation-box">
+            <Player
+              autoplay
+              loop
+              src={developerSkillsAnimation}
+              className="about-animation-lottie"
+            />
           </div>
         </div>
       </div>
