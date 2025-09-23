@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "./About.css";
 import { FaGraduationCap } from "react-icons/fa";
-import { Player } from "lottie-react";
 
 // Import PNG logos
 import htmlLogo from "../assets/skills/html.png";
@@ -12,8 +11,11 @@ import reactLogo from "../assets/skills/react.png";
 import figmaLogo from "../assets/skills/figma.png";
 import gitLogo from "../assets/skills/git.png";
 
-// Import Lottie JSON animation
-import developerSkillsAnimation from "../assets/developer skills.json";
+// Import your Lottie JSON file
+import developerAnimation from "../assets/developer skills.json"; // <-- your Lottie file
+
+// Import Lottie Player
+import Lottie from "lottie-react";
 
 const About = () => {
   const contentRef = useRef(null);
@@ -63,6 +65,7 @@ const About = () => {
             </div>
           </div>
 
+          {/* Skills Section */}
           <div className="skills">
             <h2>My Skills</h2>
             <div className="skills-icons">
@@ -77,13 +80,14 @@ const About = () => {
           </div>
         </div>
 
+        {/* Lottie Animation */}
         <div className="about-animation" ref={animationRef}>
           <div className="animation-box">
-            <Player
-              autoplay
-              loop
-              src={developerSkillsAnimation}
-              className="about-animation-lottie"
+            <Lottie 
+              animationData={developerAnimation} 
+              loop={true} 
+              autoplay={true} 
+              style={{ width: "300px", height: "300px" }} 
             />
           </div>
         </div>
