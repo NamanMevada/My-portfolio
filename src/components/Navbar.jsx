@@ -4,7 +4,8 @@ import "./Navbar.css";
 const Navbar = () => {
   const [active, setActive] = useState("Home");
   const [scrolled, setScrolled] = useState(false);
-  const [animate, setAnimate] = useState(false); // for animation
+  const [animate, setAnimate] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     setAnimate(true); // trigger animation on mount
@@ -23,6 +24,7 @@ const Navbar = () => {
         }
       });
     };
+
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -30,10 +32,23 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="logo">Naman</div>
-      <ul className={`nav-links ${animate ? "animate" : ""}`}>
+
+      {/* Hamburger Icon */}
+      <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      {/* Nav Links */}
+      <ul className={`nav-links ${animate ? "animate" : ""} ${menuOpen ? "open" : ""}`}>
         {["Home", "About", "Experience", "Works", "Contact"].map((sec) => (
           <li key={sec}>
-            <a href={`#${sec}`} className={active === sec ? "active" : ""}>
+            <a
+              href={`#${sec}`}
+              className={active === sec ? "active" : ""}
+              onClick={() => setMenuOpen(false)} // close menu on click
+            >
               {sec}
             </a>
           </li>
@@ -44,6 +59,7 @@ const Navbar = () => {
             className="resume-btn"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => setMenuOpen(false)}
           >
             Resume
           </a>
