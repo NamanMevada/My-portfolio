@@ -3,13 +3,13 @@
 .home {
   display: flex;
   align-items: center;
-  justify-content: center;   /* ✅ center horizontally */
-  flex-direction: column;    /* ✅ stack vertically */
-  text-align: center;        /* ✅ center text */
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
   min-height: 100vh;
   padding: 50px 20px;
   color: white;
-  font-family: 'Montserrat', sans-serif; /* Apply Montserrat */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .home-content {
@@ -23,14 +23,14 @@
 }
 
 .home-content h1 .highlight {
-  color: #4da6ff; /* highlight name */
+  color: #4da6ff;
 }
 
 .home-content h2 {
   font-size: 2rem;
   margin-bottom: 25px;
   color: rgb(255, 77, 90);
-  min-height: 45px;  /* reserve space for typewriter */
+  min-height: 45px;
   font-weight: 600;
 }
 
@@ -43,8 +43,9 @@
 
 .btn-group {
   display: flex;
-  justify-content: center;   /* ✅ center buttons */
+  justify-content: center;
   gap: 18px;
+  flex-wrap: wrap; /* allow buttons to wrap on smaller screens */
 }
 
 .btn {
@@ -73,4 +74,50 @@
 .btn.secondary:hover {
   background-color: #1e90ff;
   color: white;
+}
+
+/* ===================== RESPONSIVE FOR MOBILE ===================== */
+@media (max-width: 768px) {
+  .home-content h1 {
+    font-size: 2.2rem; /* smaller heading */
+  }
+
+  .home-content h2 {
+    font-size: 1.5rem; /* smaller subheading */
+    min-height: 35px;
+  }
+
+  .home-content p {
+    font-size: 1rem; /* smaller paragraph */
+  }
+
+  .btn {
+    padding: 10px 20px; /* slightly smaller buttons */
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .home-content h2 {
+    font-size: 1.2rem;
+    min-height: 30px;
+  }
+
+  .home-content p {
+    font-size: 0.95rem;
+  }
+
+  .btn-group {
+    flex-direction: column; /* stack buttons vertically */
+    gap: 12px;
+  }
+
+  .btn {
+    width: 100%; /* full width buttons on small screens */
+    text-align: center;
+  }
 }
