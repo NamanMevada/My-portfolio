@@ -1,8 +1,8 @@
 import React from "react";
 import "./Works.css";
-import furneoImg from "../assets/projects/project1.jpg";
-import cloudyImg from "../assets/projects/project2.png"; 
-import portfolioImg from "../assets/projects/project3.png"; // Add your portfolio image
+import furneoImg from "../assets/Projects/project1.jpg";
+import cloudyImg from "../assets/Projects/project2.png"; 
+import portfolioImg from "../assets/Projects/project3.png";
 import { FaLaptopCode } from "react-icons/fa";
 
 const Works = () => {
