@@ -6,4 +6,20 @@
   height: 100%;
   z-index: -1;
   pointer-events: none;
+  /* make sure it covers all screen sizes */
+  object-fit: cover; /* if it's a canvas or video element */
+}
+
+/* Optional: for small screens, reduce size or adjust if needed */
+@media (max-width: 768px) {
+  .canvas-2 {
+    height: 100vh; /* ensure it doesn't overflow */
+  }
+}
+
+@media (max-width: 480px) {
+  .canvas-2 {
+    height: 100vh;
+    width: 100vw;
+  }
 }

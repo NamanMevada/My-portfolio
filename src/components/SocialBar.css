@@ -1,33 +1,32 @@
 .social-bar {
   position: fixed;
   top: 40%;
-  left: 20px; /* thoda screen se andar taaki chipka na lage */
+  left: 15px; /* thoda andar */
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px; /* less gap for smaller look */
   z-index: 1000;
 }
 
 .social-bar a {
   color: white;
-  font-size: 1.5rem;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  background: rgba(0, 0, 0, 0.7); /* circle background */
+  font-size: 1.2rem; /* smaller icons */
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* hanging shadow */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s, box-shadow 0.3s, color 0.3s;
-  animation: float 3s ease-in-out infinite; /* floating animation */
-  border: 1px solid white;
+  animation: float 3s ease-in-out infinite;
+  
 }
 
 .social-bar a:hover {
-  transform: translateY(-10px) scale(1.1); /* jump */
+  transform: translateY(-8px) scale(1.08);
   color: #64ffda;
-
 }
 
 /* floating animation */
@@ -36,6 +35,33 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-6px);
+    transform: translateY(-5px);
+  }
+}
+
+/* ✅ Responsive for small screens */
+@media (max-width: 768px) {
+  .social-bar {
+    left: 10px;
+    gap: 12px;
+  }
+
+  .social-bar a {
+    font-size: 1rem;
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-bar {
+    left: 8px;
+    gap: 10px;
+  }
+
+  .social-bar a {
+    font-size: 0.9rem;
+    width: 32px;
+    height: 32px;
   }
 }
