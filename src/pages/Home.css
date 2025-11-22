@@ -1,29 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 .home {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  text-align: center;
   min-height: 100vh;
-  padding: 50px 20px;
+  padding: 80px 20px;
   color: white;
   font-family: 'Montserrat', sans-serif;
+  width: 100%;
 }
 
 .home-content {
   max-width: 800px;
+  width: 100%;
+  text-align: center;
 }
 
 .home-content h1 {
   font-size: 3rem;
   margin-bottom: 15px;
   line-height: 1.3;
+  font-weight: 700;
 }
 
 .home-content h1 .highlight {
   color: #4da6ff;
+  display: inline-block;
+  white-space: nowrap; /* Prevent name from breaking */
 }
 
 .home-content h2 {
@@ -35,17 +46,18 @@
 }
 
 .home-content p {
-  margin-bottom: 30px;
+  margin: 0 auto 30px;
   line-height: 1.7;
   font-size: 1.2rem;
   color: #d1d1d1;
+  max-width: 700px;
 }
 
 .btn-group {
   display: flex;
   justify-content: center;
   gap: 18px;
-  flex-wrap: wrap; /* allow buttons to wrap on smaller screens */
+  flex-wrap: wrap;
 }
 
 .btn {
@@ -55,20 +67,25 @@
   font-weight: 600;
   font-size: 1.05rem;
   transition: all 0.3s ease;
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .btn.primary {
   background-color: #1e90ff;
   color: white;
+  border: 2px solid #1e90ff;
 }
 
 .btn.primary:hover {
   background-color: #4da6ff;
+  border-color: #4da6ff;
 }
 
 .btn.secondary {
   border: 2px solid #1e90ff;
   color: #1e90ff;
+  background-color: transparent;
 }
 
 .btn.secondary:hover {
@@ -76,48 +93,328 @@
   color: white;
 }
 
-/* ===================== RESPONSIVE FOR MOBILE ===================== */
-@media (max-width: 768px) {
+/* ===================== TABLET (768px - 1024px) ===================== */
+@media screen and (max-width: 1024px) {
   .home-content h1 {
-    font-size: 2.2rem; /* smaller heading */
+    font-size: 2.5rem;
   }
 
   .home-content h2 {
-    font-size: 1.5rem; /* smaller subheading */
-    min-height: 35px;
-  }
-
-  .home-content p {
-    font-size: 1rem; /* smaller paragraph */
-  }
-
-  .btn {
-    padding: 10px 20px; /* slightly smaller buttons */
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .home-content h1 {
     font-size: 1.8rem;
   }
 
+  .home-content p {
+    font-size: 1.1rem;
+    max-width: 600px;
+  }
+}
+
+/* ===================== MOBILE (480px - 768px) ===================== */
+@media screen and (max-width: 768px) {
+  .home {
+    padding: 70px 30px;
+  }
+
+  .home-content h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  /* Keep "Naman Mevada" on same line */
+  .home-content h1 .highlight {
+    font-size: 1.9rem;
+  }
+
   .home-content h2 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    min-height: 40px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+
+  .home-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    padding: 0 10px;
+    max-width: 500px;
+    margin-bottom: 25px;
+  }
+
+  .btn-group {
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .btn {
+    padding: 11px 22px;
+    font-size: 0.98rem;
+  }
+}
+
+/* ===================== SMALL MOBILE (320px - 480px) ===================== */
+@media screen and (max-width: 480px) {
+  .home {
+    padding: 60px 15px;
+  }
+
+  .home-content h1 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    /* Allow natural text flow */
+    line-height: 1.3;
+  }
+
+  /* Adjust name size but keep together */
+  .home-content h1 .highlight {
+    font-size: 1.5rem;
+    display: block; /* Put name on its own line */
+    margin-top: 5px;
+  }
+
+  .home-content h2 {
+    font-size: 1.15rem;
+    min-height: 35px;
+    margin-bottom: 20px;
+    /* Better text wrapping for typewriter */
+    word-wrap: break-word;
+    padding: 0 5px;
+  }
+
+  .home-content p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    padding: 0;
+    margin-bottom: 25px;
+    /* Better text flow on mobile */
+    text-align: center;
+    word-spacing: 1px;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 260px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  /* Shorten button text on mobile */
+  .btn.secondary {
+    font-size: 0.92rem;
+  }
+}
+
+/* ===================== VERY SMALL MOBILE (below 360px) ===================== */
+@media screen and (max-width: 360px) {
+  .home {
+    padding: 50px 12px;
+  }
+
+  .home-content h1 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+  }
+
+  .home-content h1 .highlight {
+    font-size: 1.35rem;
+  }
+
+  .home-content h2 {
+    font-size: 1rem;
+    min-height: 32px;
+    margin-bottom: 18px;
+  }
+
+  .home-content p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 22px;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 240px;
+    padding: 11px 18px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ===================== TINY SCREENS (below 320px) ===================== */
+@media screen and (max-width: 320px) {
+  .home {
+    padding: 45px 10px;
+  }
+
+  .home-content h1 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+  }
+
+  /* Stack "Hello, I'm" and name */
+  .home-content h1 .highlight {
+    font-size: 1.25rem;
+    display: block;
+    margin-top: 3px;
+  }
+
+  .home-content h2 {
+    font-size: 0.95rem;
     min-height: 30px;
   }
 
   .home-content p {
+    font-size: 0.85rem;
+    line-height: 1.55;
+  }
+
+  .btn {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+    max-width: 220px;
+  }
+}
+
+/* ===================== LANDSCAPE MODE ===================== */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  .home {
+    padding: 40px 20px;
+    min-height: auto;
+  }
+
+  .home-content h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .home-content h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    min-height: 35px;
+  }
+
+  .home-content p {
     font-size: 0.95rem;
+    margin-bottom: 20px;
   }
 
   .btn-group {
-    flex-direction: column; /* stack buttons vertically */
     gap: 12px;
   }
 
   .btn {
-    width: 100%; /* full width buttons on small screens */
-    text-align: center;
+    padding: 9px 20px;
+    font-size: 0.9rem;
   }
+}
+
+/* ===================== LARGE SCREENS (above 1440px) ===================== */
+@media screen and (min-width: 1440px) {
+  .home-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .home-content h2 {
+    font-size: 2.3rem;
+    min-height: 50px;
+  }
+
+  .home-content p {
+    font-size: 1.3rem;
+    max-width: 750px;
+  }
+
+  .btn {
+    padding: 14px 28px;
+    font-size: 1.1rem;
+  }
+}
+
+/* ===================== 4K DISPLAYS ===================== */
+@media screen and (min-width: 2560px) {
+  .home-content {
+    max-width: 1000px;
+  }
+
+  .home-content h1 {
+    font-size: 4rem;
+  }
+
+  .home-content h2 {
+    font-size: 2.8rem;
+    min-height: 60px;
+  }
+
+  .home-content p {
+    font-size: 1.5rem;
+    max-width: 850px;
+  }
+
+  .btn {
+    padding: 16px 32px;
+    font-size: 1.25rem;
+  }
+
+  .btn-group {
+    gap: 24px;
+  }
+}
+
+/* ===================== SPECIAL ADJUSTMENTS ===================== */
+
+/* Prevent text orphans on mobile */
+@media screen and (max-width: 480px) {
+  .home-content p {
+    /* Optimize text for mobile reading */
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    word-break: break-word;
+  }
+}
+
+/* Samsung Galaxy S8+ and similar tall phones */
+@media screen and (max-width: 380px) and (min-height: 740px) {
+  .home {
+    padding: 70px 20px;
+  }
+  
+  .home-content p {
+    font-size: 0.98rem;
+  }
+}
+
+/* iPhone SE and small phones */
+@media screen and (max-width: 375px) and (max-height: 667px) {
+  .home {
+    padding: 55px 18px;
+  }
+}
+
+/* Prevent horizontal scroll on all mobile devices */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+/* Typewriter inside < /> styling */
+.typewriter-code {
+  font-family: 'Montserrat', monospace;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ff4d5a; /* Typewriter word color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.typewriter-code .code-bracket {
+  color: #888888; /* Light gray for < /> brackets */
 }

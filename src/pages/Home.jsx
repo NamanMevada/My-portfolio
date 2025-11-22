@@ -10,7 +10,8 @@ const Home = () => {
           Hello, I’m <span className="highlight">Naman Mevada</span>
         </h1>
 
-        <h2>
+        <h2 className="typewriter-code">
+          <span className="code-bracket">&lt;</span>{" "}
           <Typewriter
             words={[
               "A Passionate Web Developer",
@@ -23,7 +24,8 @@ const Home = () => {
             typeSpeed={80}
             deleteSpeed={50}
             delaySpeed={1500}
-          />
+          />{" "}
+          <span className="code-bracket">/&gt;</span>
         </h2>
 
         <p>

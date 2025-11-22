@@ -18,54 +18,108 @@ const Navbar = () => {
       sections.forEach((sec) => {
         const element = document.getElementById(sec);
         if (element) {
-          const top = element.offsetTop - 100;
+          const rect = element.getBoundingClientRect();
+          const top = rect.top + window.scrollY - 100;
           const bottom = top + element.offsetHeight;
-          if (window.scrollY >= top && window.scrollY < bottom) setActive(sec);
+          if (window.scrollY >= top && window.scrollY < bottom) {
+            setActive(sec);
+          }
         }
       });
     };
 
     window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    onScroll(); // Call once on mount to set initial active state
+
+    // Close menu when clicking outside
+    const handleClickOutside = (e) => {
+      if (menuOpen && !e.target.closest('.navbar')) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [menuOpen]);
+
+  // Close menu on window resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  const handleNavClick = (section) => {
+    setActive(section);
+    setMenuOpen(false);
+  };
 
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
-      <div className="logo">NAMAN</div>
+      <div className="navbar-container">
+        <div className="logo">
+          <a href="#Home" onClick={() => handleNavClick("Home")}>
+            NAMAN
+          </a>
+        </div>
 
-      {/* Hamburger Icon */}
-      <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+        {/* Hamburger Icon */}
+        <div 
+          className={`hamburger ${menuOpen ? "active" : ""}`} 
+          onClick={(e) => {
+            e.stopPropagation();
+            setMenuOpen(!menuOpen);
+          }}
+          aria-label="Toggle menu"
+          role="button"
+          tabIndex={0}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
 
-      {/* Nav Links */}
-      <ul className={`nav-links ${animate ? "animate" : ""} ${menuOpen ? "open" : ""}`}>
-        {["Home", "About", "Experience", "Works", "Contact"].map((sec) => (
-          <li key={sec}>
+        {/* Nav Links */}
+        <ul className={`nav-links ${animate ? "animate" : ""} ${menuOpen ? "open" : ""}`}>
+          {["Home", "About", "Experience", "Works", "Contact"].map((sec, index) => (
+            <li key={sec} style={{ animationDelay: `${index * 0.1}s` }}>
+              <a
+                href={`#${sec}`}
+                className={active === sec ? "active" : ""}
+                onClick={() => handleNavClick(sec)}
+              >
+                {sec}
+              </a>
+            </li>
+          ))}
+          <li className="resume-item" style={{ animationDelay: "0.5s" }}>
             <a
-              href={`#${sec}`}
-              className={active === sec ? "active" : ""}
-              onClick={() => setMenuOpen(false)} // close menu on click
+              href="https://drive.google.com/drive/u/0/folders/1s_azBj2C-pZBpCVxEMNcV9xt729Y_kJC"
+              className="resume-btn"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
             >
-              {sec}
+              Resume
             </a>
           </li>
-        ))}
-        <li>
-          <a
-            href="https://drive.google.com/drive/u/0/folders/1s_azBj2C-pZBpCVxEMNcV9xt729Y_kJC"
-            className="resume-btn"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setMenuOpen(false)}
-          >
-            Resume
-          </a>
+        </ul>
 
-        </li>
-      </ul>
+        {/* Mobile menu overlay */}
+        <div 
+          className={`menu-overlay ${menuOpen ? "active" : ""}`}
+          onClick={() => setMenuOpen(false)}
+        ></div>
+      </div>
     </nav>
   );
 };
