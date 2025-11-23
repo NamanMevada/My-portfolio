@@ -24,7 +24,7 @@ const Works = () => {
       title: "My Portfolio",
       detail: "This is my personal portfolio showcasing my projects and skills",
       img: portfolioImg,
-      link: "https://yourportfolio.netlify.app/", // replace with your live link
+      link: "https://naman-mevada.netlify.app/", // replace with your live link
     },
   ];
 
