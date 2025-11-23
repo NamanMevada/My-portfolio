@@ -12,7 +12,7 @@ import figmaLogo from "../assets/skills/figma.png";
 import gitLogo from "../assets/skills/git.png";
 
 // Import your Lottie JSON file
-import developerAnimation from "../assets/developer skills.json"; // <-- your Lottie file
+import developerAnimation from "../assets/developer skills.json";
 
 // Import Lottie Player
 import Lottie from "lottie-react";
@@ -47,12 +47,14 @@ const About = () => {
   return (
     <section id="about" className="about">
       <div className="about-container">
+        {/* Left Content */}
         <div className="about-content" ref={contentRef}>
           <h2>About Me</h2>
           <p>
             Hi, I’m <span className="highlight">Naman Mevada</span>, a passionate Frontend Developer focused on building responsive, user-friendly web applications.
           </p>
 
+          {/* Education Section */}
           <div className="education">
             <h2>Education</h2>
             <div className="edu-card">
@@ -80,7 +82,7 @@ const About = () => {
           </div>
         </div>
 
-        {/* Lottie Animation */}
+        {/* Right Lottie Animation */}
         <div className="about-animation" ref={animationRef}>
           <div className="animation-box">
             <Lottie 

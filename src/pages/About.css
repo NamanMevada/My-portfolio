@@ -157,7 +157,6 @@
 
 .skill-logo:hover {
   transform: scale(1.15);
-  
 }
 
 /* Lottie Animation Box */
@@ -193,7 +192,6 @@
 }
 
 /* ===================== RESPONSIVE BREAKPOINTS ===================== */
-
 /* Large Desktop (1440px+) */
 @media screen and (min-width: 1440px) {
   .about-container {
@@ -535,6 +533,7 @@
 
 /* Prevent text orphans */
 @media screen and (max-width: 600px) {
+
   .about-content p,
   .edu-card p {
     hyphens: auto;
@@ -551,6 +550,7 @@
 
 /* Accessibility - Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
+
   .about-content,
   .about-animation,
   .edu-card,
