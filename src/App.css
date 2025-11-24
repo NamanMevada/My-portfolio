@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -40,3 +41,77 @@
 .read-the-docs {
   color: #888;
 }
+=======
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+* {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: linear-gradient(135deg, #0a0f1f, #121c34);
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.main {
+  padding: 30px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fade-in Animation */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.p1,
+.p2,
+.info .touch,
+.img-container dotlottie-wc {
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease forwards;
+}
+
+.p1 {
+  animation-delay: 0.2s;
+}
+
+.p2 {
+  animation-delay: 0.5s;
+}
+
+.info .touch {
+  animation-delay: 0.8s;
+}
+
+.img-container dotlottie-wc {
+  animation-delay: 1s;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.section {
+  min-height: 100vh;
+  padding: 100px 50px;
+  scroll-margin-top: 100px;
+  /* fixes navbar overlap */
+}
+>>>>>>> 467e81bf48a6a487c35fb8ad401e734cd872d574

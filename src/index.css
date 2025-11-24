@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -66,3 +67,7 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+=======
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+>>>>>>> 467e81bf48a6a487c35fb8ad401e734cd872d574

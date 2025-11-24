@@ -1,0 +1,21 @@
+.footer {
+  padding: 20px 40px;
+  text-align: center;
+  background: linear-gradient(135deg, #0e152b, #121c34);
+  color: #cccccc;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .footer {
+    padding: 15px 20px;
+    font-size: 0.9rem;
+  }
+}
